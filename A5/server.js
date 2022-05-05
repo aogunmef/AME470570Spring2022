@@ -26,6 +26,12 @@ server.get("/addFeed", function (req, res) {
   });
 });
 
+server.get("/deleteFeed", function(req,res){
+  db.collection("data").remove({id:req.query.id}, function(e,r){
+    res.end("done");
+  })
+})
+
 server.get("/editFeed", function (req, res) {
   var id = req.query.id;
   var newName = req.query.newName;

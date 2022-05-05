@@ -239,6 +239,13 @@
           });
         });
       }
+
+      function deleteFeed(index) {
+        loadURL("./deleteFeed?id=" + allFeeds[index].id, function(resp){
+          start();
+        })
+      }
+
     </script>
   </head>
   <body onload='start()'>
